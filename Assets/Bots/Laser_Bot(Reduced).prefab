@@ -163,12 +163,13 @@ GameObject:
   - component: {fileID: 95074938066553440}
   - component: {fileID: 114754300123503790}
   - component: {fileID: 114647533961297276}
-  - component: {fileID: 114358280511642354}
   - component: {fileID: 195647951160862986}
-  - component: {fileID: 136927359654179260}
+  - component: {fileID: 114919564697874466}
+  - component: {fileID: 65960310889605254}
+  - component: {fileID: 54934425191480244}
   m_Layer: 0
   m_Name: Laser_Bot(Reduced)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -265,8 +266,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1616814639062036}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.87, y: 0, z: 3.96}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 11.87, y: 6.6, z: 3.96}
   m_LocalScale: {x: 1.15, y: 1.15, z: 1.15}
   m_Children:
   - {fileID: 4171560135550946}
@@ -1007,6 +1008,33 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1249431916807492}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &54934425191480244
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1616814639062036}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &65960310889605254
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1616814639062036}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &95074938066553440
 Animator:
   serializedVersion: 3
@@ -1024,21 +1052,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114358280511642354
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1616814639062036}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fcaea623690ea84ca0d00cedf8cc3b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  range: 5
-  interval: 1.5
-  enemyTag: 
-  arrow: {fileID: 0}
 --- !u!114 &114647533961297276
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1064,6 +1077,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   circle: {fileID: 1125951142783896}
+--- !u!114 &114919564697874466
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1616814639062036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fcaea623690ea84ca0d00cedf8cc3b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 5
+  interval: 1.5
+  enemyTag: Enemy
+  arrow: {fileID: 166182, guid: 84be8c19674897640a51fe85b4b4576c, type: 2}
 --- !u!136 &136223537672136512
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -1142,19 +1170,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!136 &136927359654179260
-CapsuleCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1616814639062036}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 1.55
-  m_Height: 4
-  m_Direction: 1
-  m_Center: {x: 0, y: 3.73, z: 0}
 --- !u!195 &195647951160862986
 NavMeshAgent:
   m_ObjectHideFlags: 1

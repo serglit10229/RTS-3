@@ -15,11 +15,12 @@ public class Arrow : MonoBehaviour {
             // Fly towards it            
             Vector3 dir = target.position - transform.position;
             GetComponent<Rigidbody>().velocity = dir.normalized * speed;
-            
+            Debug.Log("FIREE");
             // Look at it
             transform.LookAt(target.position);
         } else {
             // Otherwise destroy self
+            Debug.Log("Destroy");
             Destroy(gameObject);
         }
     }
@@ -29,7 +30,7 @@ public class Arrow : MonoBehaviour {
         if (co.transform == target) {
             // Decrease target's health by 1
             --co.GetComponent<Health>().current;
-            
+            Debug.Log("Collision");
             // Destroy self
             Destroy(gameObject);
         }

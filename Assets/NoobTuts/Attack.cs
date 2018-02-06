@@ -20,12 +20,16 @@ public class Attack : MonoBehaviour {
     }
     
     void Fire() {
+        Debug.Log("Fire");
         foreach (GameObject g in GameObject.FindGameObjectsWithTag(enemyTag)) {
             // still alive?
+            Debug.Log("Fire2");
             if (g != null) {
-                // in attack range?				
+                // in attack range?		
+                Debug.Log("Fire3");
                 if (Vector3.Distance(g.transform.position, transform.position) <= range) {
                     // shoot arrow at it
+                    Debug.Log("Fire4");
                     GameObject a = (GameObject)Instantiate(arrow, 
                                                            transform.position, // default position
                                                            Quaternion.identity); // default rotation
